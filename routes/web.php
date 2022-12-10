@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\controladorBD;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//MOSTRAST LA VISTA CONSULTAR
+Route::get('vistaconsulta', [controladorBD::class,'index'])->name('vistaconsulta.index');
+
+
+
+
+//HACER LA INSERSION
+Route::post('insfruta', [controladorBD::class,'create'])->name('frutas.create');
