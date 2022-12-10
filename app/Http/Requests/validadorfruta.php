@@ -23,10 +23,10 @@ class validadorfruta extends FormRequest
      */
     public function rules()
     {
-        return ['txtfruta'=>'required|max:50',
-                'txttem'=>'required',
-                'txtprecio'=>'required',
-                'txtst'=>'required',
+        return ['txtfruta'=>'required|max:50|alpha',
+                'txttem'=>'required|alpha',
+                'txtprecio'=>'required|numeric',
+                'txtst'=>'required|numeric',
                 
             ];
     }
