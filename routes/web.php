@@ -32,3 +32,7 @@ Route::post('insfruta', [controladorBD::class,'create'])->name('frutas.create');
 //ELIMINAR
 
 Route::delete('fruta/{id}', [controladorBD::class,'destroy'])->name('fruta.destroy');
+
+
+//ACTUALIZAR
+Route::put('fru/{id}', [controladorBD::class,'update'])->name('fru.update');

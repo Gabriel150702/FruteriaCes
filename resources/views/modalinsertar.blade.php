@@ -25,8 +25,8 @@
            <div class="row mb-3">
              <label  class="col-sm-2 col-form-label fw-bold">temporada</label>
              <div class="col-sm-10">
-                   <input type="text" class="form-control" name="txttem" value="{{old('txttem')}}">
-                   {{ $errors->first('txttem') }}
+                   <input type="text" class="form-control" name="txttemp" value="{{old('txttemp')}}">
+                   {{ $errors->first('txttemp') }}
                </div>
              </div>
 

@@ -27,11 +27,11 @@ class controladorBD extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(validadorfruta $request)
+    public function create(validadorfruta  $request)
     {
         DB::table('tb_frutas')->insert([
             "nombre"=> $request->input('txtfruta'),
-            "temporada"=> $request->input('txttem'),
+            "temporada"=> $request->input('txttemp'),
             "precio"=> $request->input('txtprecio'),
             "st"=> $request->input('txtst'),
             
@@ -83,9 +83,20 @@ class controladorBD extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(validadorfruta $request, $id)
     {
-        //
+        DB::table('tb_frutas')->where('idFruta',$id)->update([
+            "nombre"=> $request->input('txtfruta'),
+            "temporada"=> $request->input('txttemp'),
+            "precio"=> $request->input('txtprecio'),
+            "st"=> $request->input('txtst'),
+            
+            "updated_at"=> Carbon::now()
+
+
+        ]);
+
+        return redirect('vistaconsulta')->with('Actualizar','abc');
     }
 
     /**

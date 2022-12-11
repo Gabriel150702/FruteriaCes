@@ -21,6 +21,16 @@
       )     </script>"!!}
 
     @endif 
+
+
+    @if (session()->has('Actualizar'))
+        {!! "<script>Swal.fire(
+            'Correcto!',
+            'Tu fruta se actualizo!',
+            'OK'
+      )     </script>"!!}
+
+    @endif 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,9 +84,9 @@
                     <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modaleliminar-{{$consulta->idFruta}}">
                      Eliminar 
                     </button></td>
-                    
-                    @include('modaleliminar')
                     @include('modalactualizar')
+                    @include('modaleliminar')
+                   
                 </tr>
               @endforeach
             </tbody>
