@@ -96,6 +96,8 @@ class controladorBD extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('tb_frutas')->where('idFruta',$id)->delete();
+
+        return redirect('vistaconsulta')->with('Eliminar','abc');
     }
 }

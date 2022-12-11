@@ -29,5 +29,6 @@ Route::get('vistaconsulta', [controladorBD::class,'index'])->name('vistaconsulta
 //HACER LA INSERSION
 Route::post('insfruta', [controladorBD::class,'create'])->name('frutas.create');
 
+//ELIMINAR
 
-//consultar frutas
+Route::delete('fruta/{id}', [controladorBD::class,'destroy'])->name('fruta.destroy');

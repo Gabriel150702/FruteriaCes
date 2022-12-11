@@ -12,6 +12,15 @@
 
     @endif 
 
+
+    @if (session()->has('Eliminar'))
+        {!! "<script>Swal.fire(
+            'Correcto!',
+            'Tu fruta se elimino!',
+            'OK'
+      )     </script>"!!}
+
+    @endif 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,9 +65,16 @@
                     <td>{{$consulta->temporada}}</td>
                     <td>${{$consulta->precio}}</td>
                     <td>{{$consulta->st}}</td>
+
+
+
+                    <td><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalactualizar-{{$consulta->idFruta}}">
+                     Actualizar  
+                    </button></td>
+                    <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modaleliminar-{{$consulta->idFruta}}">
+                     Eliminar 
+                    </button></td>
                     
-                    <td><a type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalactuaalizar{{ $consulta->idFruta }}">Editar<i alt="Editar"></a></td>
-                    <td><a type="button"  class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modaleliminar{{ $consulta->idFruta }}">Eliminar<i alt="Borrar"></a></td>
                     @include('modaleliminar')
                     @include('modalactualizar')
                 </tr>
