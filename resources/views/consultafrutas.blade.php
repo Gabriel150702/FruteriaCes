@@ -26,12 +26,49 @@
 <h1 class="display-3 mt-4 mb-4 text-center">FRUTERIA DON GARBANZO-FRESCURA </h1>
     <div class="container col-md-6 mb-5 d-grid gap-2">
                     <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalInsertar">
-                     Insertar Recuerdo <i class="bi bi-shop"></i>
+                     Insertar Fruta <i class="bi bi-shop"></i>
                     </button> 
-
-
-
     </div>
+
+    <div class="container col-md-6 mb-6"> 
+    <div class="card text-center">
+  <div class="card-header">
+    CONSULTAR FRUTAS
+  </div>
+  
+    <div class="">
+        <table class="table table-sm">
+        <thead>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Temporada</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                
+                <th>Editar</th>
+                <th>Borrar</th>
+            </thead>
+            <tbody>
+              @foreach($consultafrutas as $consulta)
+                <tr>
+                    <td>{{$consulta->idFruta}}</td>
+                    <td>{{$consulta->nombre}}</td>
+                    <td>{{$consulta->temporada}}</td>
+                    <td>${{$consulta->precio}}</td>
+                    <td>{{$consulta->st}}</td>
+                    
+                    <td><a type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalactuaalizar{{ $consulta->idFruta }}">Editar<i alt="Editar"></a></td>
+                    <td><a type="button"  class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modaleliminar{{ $consulta->idFruta }}">Eliminar<i alt="Borrar"></a></td>
+                    @include('modaleliminar')
+                    @include('modalactualizar')
+                </tr>
+              @endforeach
+            </tbody>
+        </table>
+    
+    </div>
+</div>  
+</div>
 
 
 </body>

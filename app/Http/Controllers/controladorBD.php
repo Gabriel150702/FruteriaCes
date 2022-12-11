@@ -15,7 +15,11 @@ class controladorBD extends Controller
      */
     public function index()
     {
-        return view('consultafrutas');
+
+        $consultafrutas= DB::table('tb_frutas')->get();
+         
+        return view('consultafrutas',compact('consultafrutas'));
+        
     }
 
     /**
@@ -45,9 +49,9 @@ class controladorBD extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+      
     }
 
     /**
@@ -56,9 +60,9 @@ class controladorBD extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('consultafrutas');
     }
 
     /**

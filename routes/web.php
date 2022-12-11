@@ -28,3 +28,6 @@ Route::get('vistaconsulta', [controladorBD::class,'index'])->name('vistaconsulta
 
 //HACER LA INSERSION
 Route::post('insfruta', [controladorBD::class,'create'])->name('frutas.create');
+
+
+//consultar frutas
